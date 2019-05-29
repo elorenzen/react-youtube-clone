@@ -1,8 +1,15 @@
 import React from 'react';
 
-const VideoItem = (props) => {
+const VideoItem = ({video}) => {
+    const watchLink=`https://www.youtube.com/watch?v=${video.id.videoId}`;
+
     return (
-        <div>Video Item</div>
+        <div>
+            <a href={watchLink}>
+            <h3>{video.snippet.title}</h3>
+            <img src={video.snippet.thumbnails.default.url} alt={video.snippet.description} />
+            </a>
+        </div>
     )
 };
 
