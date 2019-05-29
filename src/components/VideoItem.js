@@ -4,11 +4,14 @@ const VideoItem = ({video}) => {
     const watchLink=`https://www.youtube.com/watch?v=${video.id.videoId}`;
 
     return (
-        <div>
-            <a href={watchLink}>
-            <h3>{video.snippet.title}</h3>
-            <img src={video.snippet.thumbnails.default.url} alt={video.snippet.description} />
-            </a>
+        <div className="item">
+            <img className="ui image" src={video.snippet.thumbnails.default.url} alt={video.snippet.description} />
+            <div className="content">
+                <a className="header" href={watchLink}>
+                    {video.snippet.title}
+                </a>
+                <div className="description">{video.snippet.description}</div>
+            </div>
         </div>
     )
 };
