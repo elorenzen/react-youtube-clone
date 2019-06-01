@@ -25,8 +25,16 @@ class App extends React.Component {
         return (
         <div className='ui container'>
             <SearchBar onTermSubmit={this.onTermSubmit} />
-            <VideoDetail video={this.state.selectedVideo}></VideoDetail>
-            <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
+            <div className='ui grid'>
+                <div className="ui row">
+                    <div className='eleven wide column'>
+                        <VideoDetail video={this.state.selectedVideo}></VideoDetail>
+                    </div>
+                    <div className='five wide column'>
+                        <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
+                    </div>
+                </div>
+            </div>
         </div>
         )
     }
